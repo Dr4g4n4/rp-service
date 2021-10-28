@@ -46,6 +46,21 @@ public class Car {
     public Car() {
     }
 
+    @Override
+    public String toString() {
+        return "Car{" +
+                "id=" + id +
+                ", engineNumber='" + engineNumber + '\'' +
+                ", engineType=" + engineType.toString() +
+                ", chassisSerialNumber='" + chassisSerialNumber + '\'' +
+                ", brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                ", productionDate=" + productionDate +
+                ", firstRegistration=" + firstRegistration +
+                ", mileage=" + mileage +
+                '}';
+    }
+
     public Long getId() {
         return id;
     }
