@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.Setter;
 
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -41,6 +42,16 @@ public class EngineType {
     public EngineType() {
     }
 
+    public EngineType(Long id, int motorPower, int hPower, int volume, int numberOfCylinders, String primaryFuel, Set<Car> cars) {
+        this.id = id;
+        this.motorPower = motorPower;
+        this.hPower = hPower;
+        this.volume = volume;
+        this.numberOfCylinders = numberOfCylinders;
+        this.primaryFuel = primaryFuel;
+        this.cars = cars;
+    }
+
     @Override
     public String toString() {
         return "EngineType{" +
@@ -51,15 +62,5 @@ public class EngineType {
                 ", numberOfCylinders=" + numberOfCylinders +
                 ", primaryFuel='" + primaryFuel + '\'' +
                 '}';
-    }
-
-    public EngineType(Long id, int motorPower, int hPower, int volume, int numberOfCylinders, String primaryFuel, Set<Car> cars) {
-        this.id = id;
-        this.motorPower = motorPower;
-        this.hPower = hPower;
-        this.volume = volume;
-        this.numberOfCylinders = numberOfCylinders;
-        this.primaryFuel = primaryFuel;
-        this.cars = cars;
     }
 }
