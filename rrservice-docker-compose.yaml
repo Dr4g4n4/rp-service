@@ -1,0 +1,22 @@
+version: '3.1'
+services:
+  app:
+    container_name: rpservice
+    image: rpservice
+    build: ./
+    ports:
+      - "8081:8081"
+    depends_on:
+      - postgresqldb
+  postgresqldb:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=123
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=kafkaexample
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
